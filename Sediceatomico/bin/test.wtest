@@ -1,0 +1,33 @@
+import example.*
+
+describe "Test de springfield" {
+
+test "burns produce 1" {
+	//centralAtomicaBurns.varilla(10)
+	assert.equals(1, centralAtomicaBurns.produccionEnergetica())
+}
+
+test "produce 18,5" {
+//    centralDeCarbon.toneladas(20)
+	assert.equals(18.5, centralDeCarbon.produccionEnergetica())
+}
+test "suspiro produce 2" {
+	assert.equals(2,centralEolica.produccionEnergetica())
+}
+test "central contaminantes centralDeCarbon"{
+	assert.equals(centralDeCarbon, springfield.centralContaminantes())
+}
+test "Cubrio la necesidad energetica"{
+	assert.equals(true, springfield.cubrioSusNecesidades())
+}
+test "estaEnElHorno"{
+	assert.equals(true,springfield.estaEnElHorno())	
+}
+
+test "Mas productora de Springfield"{
+	assert.equals(centralDeCarbon,springfield.centralQueMasProduce())
+}
+test "Mas productora de Albuquerque"{
+	assert.equals(centralHidroelectrica, albuquerque.centralQueMasProduce())
+}
+}
