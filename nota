@@ -1,0 +1,8 @@
+case d_ACK:
+			log_info(LOGGER_OBLIGATORIO, "Llego un ACK");
+			void* packACKPokemon = Serialize_ReceiveAndUnpack(cliente, header.tamanioMensaje);
+			uint32_t idMensaje =  Serialize_Unpack_ACK(packACKPokemon); //supongo que el gamecard me manda un ack con el id que le llego
+			actualizarRecibidosPorID(idMensaje, cliente);
+			log_info (LOGGER_OBLIGATORIO, "Se agrego el suscriptor %i a la cola de ACK del mensaje %i ", cliente, idMensaje);
+			sem_post(&MUTEX_CLIENTE);
+			break;
